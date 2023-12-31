@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="Algorithmes" nsURI="https://algorithmes" nsPrefix="https://algorithmes">
+  <eClassifiers xsi:type="ecore:EClass" name="Catalogue">
+    <eStructuralFeatures xsi:type="ecore:EReference" upperBound="-1" eType="#//Algorithme"
+        eOpposite="#//Algorithme/%"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Algorithme">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" lowerBound="1" eType="#//Catalogue"
+        containment="true" eOpposite="#//Catalogue/%"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" eType="#//AlgoElements"
+        eOpposite="#//AlgoElements/%"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Ressources" eSuperTypes="#//AlgoElements"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Documentation" eSuperTypes="#//AlgoElements"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Entree" eSuperTypes="#//AlgoElements"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Sortie" eSuperTypes="#//AlgoElements"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AlgoElements">
+    <eStructuralFeatures xsi:type="ecore:EReference" lowerBound="1" eType="#//Algorithme"
+        containment="true" eOpposite="#//Algorithme/elements"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ScriptExterieur" eSuperTypes="#//Ressources"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FormuleCalcul" eSuperTypes="#//Ressources"/>
+</ecore:EPackage>
