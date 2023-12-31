@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="schemaTable" nsURI="http://schematable" nsPrefix="schemaTable">
+  <eClassifiers xsi:type="ecore:EClass" name="Classeur"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SchemaDeTable" eSuperTypes="#//Classeur">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nb_colonne" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="colonnes" upperBound="-1"
+        eType="#//Colonne"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Colonne">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="contraintes" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Colonne_Derivee" eSuperTypes="#//Colonne">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="result" upperBound="-1"
+        eType="#//Algorithme"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Colonne_Speciale" eSuperTypes="#//Colonne"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Colonne_Normale" eSuperTypes="#//Colonne"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Algorithme">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="colonnes_sources" upperBound="-1"
+        eType="#//Colonne"/>
+  </eClassifiers>
+</ecore:EPackage>
