@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="schemaTable" nsURI="http://schematable" nsPrefix="schemaTable">
+  <eClassifiers xsi:type="ecore:EClass" name="Classeur">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tableau" upperBound="-1"
+        eType="#//SchemaDeTable" containment="true" eOpposite="#//SchemaDeTable/classeur"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SchemaDeTable">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="colonnes" upperBound="-1"
+        eType="#//Colonne"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="classeur" lowerBound="1"
+        eType="#//Classeur" eOpposite="#//Classeur/tableau"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nblignes" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Colonne">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="contraintes" transient="true">
+      <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+        <eTypeArguments/>
+      </eGenericType>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="autre_table" eType="#//SchemaDeTable"
+        eKeys="#//SchemaDeTable/name"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Cellules" upperBound="-1"
+        eType="#//Cell"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Colonne_Speciale" eSuperTypes="#//Colonne"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Colonne_Normale" eSuperTypes="#//Colonne">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="colRef" upperBound="-1"
+        eType="#//Colonne"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Algo" eType="ecore:EClass Algorithmes.ecore#//Algorithme"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Cell">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Val" eType="#//TypeVal"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TypeVal">
+    <eLiterals name="Int"/>
+    <eLiterals name="Float" value="1"/>
+    <eLiterals name="Str" value="2"/>
+  </eClassifiers>
+</ecore:EPackage>

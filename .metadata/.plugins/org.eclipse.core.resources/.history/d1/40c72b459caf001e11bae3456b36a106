@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="ScriptCalcul" nsURI="http://scriptcalcul" nsPrefix="scriptcalcul">
+  <eClassifiers xsi:type="ecore:EClass" name="Entree"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Resultats"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Blocs">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Entree" lowerBound="2"
+        upperBound="2" eType="#//Entree" resolveProxies="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Sortie" lowerBound="1"
+        eType="#//Resultats"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Operation" eType="#//Operations"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Operations">
+    <eLiterals name="Sum"/>
+    <eLiterals name="Prod" value="1"/>
+    <eLiterals name="Op" value="2"/>
+    <eLiterals name="Inv" value="3"/>
+    <eLiterals name="Div" value="4"/>
+    <eLiterals name="Min" value="5"/>
+    <eLiterals name="Max" value="6"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Cte"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Args"/>
+</ecore:EPackage>
