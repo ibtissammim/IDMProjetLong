@@ -879,3 +879,8 @@ org.eclipse.core.runtime.CoreException: No property tester contributes a propert
 	at org.eclipse.equinox.launcher.Main.main(Main.java:1438)
 !SUBENTRY 1 org.eclipse.core.expressions 4 201 2024-01-10 10:54:19.793
 !MESSAGE No property tester contributes a property org.emftools.emf2gv.processor.ui.isEMF to type class org.eclipse.ui.part.FileEditorInput
+
+!ENTRY org.eclipse.core.resources 2 2 2024-01-10 13:11:35.731
+!MESSAGE Save operation warnings.
+!SUBENTRY 1 org.eclipse.core.resources 2 234 2024-01-10 13:11:35.744
+!MESSAGE The project description file (.project) for 'EnvironnementCalcul' was missing.  This file contains important information about the project.  A new project description file has been created, but some information about the project may have been lost.

@@ -11,12 +11,12 @@
         eType="#//Catalogue" eOpposite="#//Catalogue/algo"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//AlgoElements" containment="true" eOpposite="#//AlgoElements/algo"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="LaRess" lowerBound="1"
+        eType="#//Ressources"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Ressources">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="entree" lowerBound="1"
-        upperBound="-1" eType="#//Entree"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="sortie" lowerBound="1"
-        eType="#//Sortie"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="NomFichier" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Documentation" eSuperTypes="#//AlgoElements">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
@@ -28,6 +28,4 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="algo" lowerBound="1" eType="#//Algorithme"
         eOpposite="#//Algorithme/elements"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ScriptExterieur" eSuperTypes="#//Ressources"/>
-  <eClassifiers xsi:type="ecore:EClass" name="FormuleCalcul" eSuperTypes="#//Ressources"/>
 </ecore:EPackage>
